@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="chatApp.css">
+</head>
+<body>
+  <div class="chat-container">
+    <h1>Chat App</h1>
+    <div class="chat-messages" id="chats">
+      <div class="message">You joined</div>
+      <div class="message">Vaibhav joined</div>
+      <div class="message">Vaibhav: hello</div>
+      <div class="message">You: hi There</div>
+      <div class="message">Vaibhav: What is up?</div>
+      <div class="message">Vaibhav: All good</div>
+    </div>
+  </div>
+  <form onsubmit="sendMessage(event)">
+    <div class="input-container">
+        <input type="text" class="chat-input" name="message" id="message" placeholder="Type your message here">
+        <button class="send-btn" type="submit">Send</button>
+    </div>
+  </form>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+<script src="chatApp.js"></script>
+</html>

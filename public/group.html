@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="group.css">
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Groups List (Left) -->
+    <div class="group-list">
+      <h2>Groups</h2>
+      <form onsubmit="groupAdded(event)">
+        <input name="groupName" id="addGroup" required></input>
+        <button type="submit">Add Group</button>
+
+      </form>
+      <ul id="groups">
+        
+      </ul>
+    </div>
+
+    <!-- Chat Section (Right) -->
+    <div class="chat-section">
+      <h1>Chat App</h1>
+      <button onclick="seeChat()">seeChat</button>
+      <button onclick="members()">seeGroupMembers</button>
+      <div id="addMembersToGroup">
+
+      </div>
+      
+      <div class="chat-messages" id="chats">
+        <div class="message">You joined</div>
+        <div class="message">Vaibhav joined</div>
+        <div class="message">Vaibhav: hello</div>
+        <div class="message">You: hi There</div>
+        <div class="message">Vaibhav: What is up?</div>
+        <div class="message">Vaibhav: All good</div>
+      </div>
+      <form onsubmit="sendMessage(event)" class="chat-form">
+        <div class="input-container">
+          <input type="text" class="chat-input" name="message" id="message" placeholder="Type your message here">
+          <input type="file" id="fileInput" name="file" />
+          <button class="send-btn" type="submit">Send</button>
+        </div>
+        <div id="group-invite">
+
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+<script src="group.js"></script>
+</html>
